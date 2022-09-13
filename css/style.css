@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*** carousel ***/
+
+#carousel {
+  width: 100vw;
+  height: calc((100vw / 12) * 5);
+
+  margin: 3rem auto 1.5rem;
+  position: relative;
+  padding: 1rem;
+}
+@media screen and (min-width: 1200px) {
+  #carousel {
+    width: 80vw;
+    height: calc((80vw / 12) * 5);
+  }
+}
+@media screen and (min-width: 1600px) {
+  #carousel {
+    width: 60vw;
+    height: calc((60vw / 12) * 5);
+  }
+}
+#navSingleCarousel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+}
+#navSingleCarousel.horizontal {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#navSingleCarousel.vertical {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+#navSingleCarousel.vertical > .little,
+#directNav.vertical {
+  transform: rotate(90deg);
+}
+#navCarousels {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+#navSingleCarousel .my-btn-carousel > i {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.2);
+}
+#navSingleCarousel .my-btn-carousel > i:hover {
+  transform: scale(1.2);
+  color: rgba(255, 255, 255, 0.8);
+}
+#navSingleCarousel .my-btn-carousel > i:active {
+  color: rgb(115, 129, 255, 0.5);
+}
+#navCarousels .my-btn-carousel > i {
+  font-size: 100px;
+  color: rgba(0, 17, 255);
+}
+#navCarousels .my-btn-carousel > i:hover {
+  transform: scale(1.2);
+  color: rgba(0, 0, 0);
+}
+#navCarousels .my-btn-carousel > i:active {
+  color: rgba(255, 0, 0);
+}
+
+/* carouselContainer */
+
+.carouselContainer {
+  width: 100%;
+  height: 100%;
+  background-color: brown;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+/* Utilities carousel */
+.item {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.active {
+  display: inline-block;
+}
+
+/* TERZO CAROUSEL NONCHé INFINITY THUMBS */
+#imageContainer {
+  width: 80%;
+  height: 100%;
+}
+#thumbsContainer {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow-y: auto;
+}
+#thumbsContainer > .item {
+  height: 20%;
+  display: block;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
